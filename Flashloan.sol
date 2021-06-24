@@ -22,12 +22,12 @@ import "https://github.com/Robsonsjre/FlashloanUsecases/blob/master/contracts/in
  * 5. Keep the profits
  */
 contract Arbitrageur is
-    FlashLoanReceiverBase(address(0x506B0B2CF20FAA8f38a4E2B524EE43e1f4458Cc5))
+    FlashLoanReceiverBase(address(ADDRESS))
 {
-    address public constant DAI_ADDRESS = 0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD;
-    address public constant BAT_ADDRESS = 0x2d12186Fbb9f9a8C28B3FfdD4c42920f8539D738;
-    address public constant UNISWAP_FACTORY_A = 0xECc6C0542710a0EF07966D7d1B10fA38bbb86523;
-    address public constant UNISWAP_FACTORY_B = 0x54Ac34e5cE84C501165674782582ADce2FDdc8F4;
+    address public constant DAI_ADDRESS = ADDRESS;
+    address public constant BAT_ADDRESS = ADDRESS;
+    address public constant UNISWAP_FACTORY_A = ADDRESS;
+    address public constant UNISWAP_FACTORY_B = ADDRESS;
 
     ILendingPool public lendingPool;
     IUniswapExchange public exchangeA;
