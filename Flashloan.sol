@@ -5,19 +5,20 @@ import "https://github.com/mrdavey/ez-flashloan/blob/remix/contracts/aave/ILendi
 import "https://github.com/Robsonsjre/FlashloanUsecases/blob/master/contracts/interfaces/IUniswap.sol";
 
 
-//1 DAI = 1000000000000000000 (18 decimals)
+//1 SH = 1000000000000000000 (18 decimals)
+//1 BUSD = 1000000000000000000 (18 decimals)
 /*
  * Arbitrageur is a contract to simulate the usage of flashloans
  * to make profit out of a market inbalacement
  *
- * For this example we deployed 2 Uniswap instances which we'll
+ * For this example we deployed 2 pancakeswap instances which we'll
  * call by ExchangeA and ExchangeB
  *
  * The steps happens as following:
- * 1. Borrow DAI from Aave
- * 2. Buy BAT with DAI on ExchangeA
- * 3. Sell BAT for DAI on ExchangeB
- * 4. Repay Aave loan
+ * 1. Borrow BUSD from Cream Finance
+ * 2. Buy SH with BUSD on ExchangeA
+ * 3. Sell SH for BUSD on ExchangeB
+ * 4. Repay Cream Finance loan
  * 5. Keep the profits
  */
 contract Arbitrageur is
