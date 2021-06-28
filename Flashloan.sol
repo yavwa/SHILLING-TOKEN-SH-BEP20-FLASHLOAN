@@ -5,29 +5,28 @@ import "https://github.com/mrdavey/ez-flashloan/blob/remix/contracts/aave/ILendi
 import "https://github.com/Robsonsjre/FlashloanUsecases/blob/master/contracts/interfaces/IUniswap.sol";
 
 
-//1 SH = 1000000000000000000 (18 decimals)
-//1 BUSD = 1000000000000000000 (18 decimals)
+//1 DAI = 1000000000000000000 (18 decimals)
 /*
  * Arbitrageur is a contract to simulate the usage of flashloans
  * to make profit out of a market inbalacement
  *
- * For this example we deployed 2 pancakeswap instances which we'll
+ * For this example we deployed 2 Uniswap instances which we'll
  * call by ExchangeA and ExchangeB
  *
  * The steps happens as following:
- * 1. Borrow BUSD from Cream Finance
- * 2. Buy SH with BUSD on ExchangeA
- * 3. Sell SH for BUSD on ExchangeB
- * 4. Repay Cream Finance loan
+ * 1. Borrow DAI from Aave
+ * 2. Buy BAT with DAI on ExchangeA
+ * 3. Sell BAT for DAI on ExchangeB
+ * 4. Repay Aave loan
  * 5. Keep the profits
  */
 contract Arbitrageur is
-    FlashLoanReceiverBase(address(ADDRESS))
+    FlashLoanReceiverBase(address(0x506B0B2CF20FAA8f38a4E2B524EE43e1f4458Cc5))
 {
-    address public constant DAI_ADDRESS = ADDRESS;
-    address public constant BAT_ADDRESS = ADDRESS;
-    address public constant UNISWAP_FACTORY_A = ADDRESS;
-    address public constant UNISWAP_FACTORY_B = ADDRESS;
+    address public constant DAI_ADDRESS = 0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD;
+    address public constant BAT_ADDRESS = 0x2d12186Fbb9f9a8C28B3FfdD4c42920f8539D738;
+    address public constant UNISWAP_FACTORY_A = 0xECc6C0542710a0EF07966D7d1B10fA38bbb86523;
+    address public constant UNISWAP_FACTORY_B = 0x54Ac34e5cE84C501165674782582ADce2FDdc8F4;
 
     ILendingPool public lendingPool;
     IUniswapExchange public exchangeA;
